@@ -33,9 +33,9 @@ class Solution:
     def inorder_traversal(self, root):
         if not root:
             return []
-        self.inorderTraversal(root.left)
+        self.inorder_traversal(root.left)
         self.res.append(root.val)
-        self.inorderTraversal(root.right)
+        self.inorder_traversal(root.right)
         return self.res
 
     def inorder_traveral_iter(self, root):
@@ -56,5 +56,3 @@ class Solution:
             cursor = node.right
 
         return self.res
-
-
