@@ -48,7 +48,7 @@ class Solution:
             else:
                 res.append(right_arr.pop(0))
         # 当至少一个为空之后，直接添加该列表中剩余的所有元素到res中
-        res += left_arr or right_arr
+        res.extend(left_arr if left_arr else right_arr)
         return res
 
 
@@ -83,7 +83,7 @@ class Solution2:
         i = 0           # left的下标
         j = 0           # right的下标
         # 不使用pop方法，采用不断更新两个列表索引i，j的方法
-        while i < len(left) and j < len(right):
+        while i < len(left) and j < len(right):     # 拉链式交错排序合并左右半部
             if left[i] < right[j]:
                 res.append(left[i])
                 i += 1
